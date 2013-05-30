@@ -1,3 +1,9 @@
 pz_swcf_core_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: PzSWCFCoreBundle:Default:index }
+#page:
+#	pattern:  /{controller}/{id}
+#	defaults: { _controller: PzSWCFCoreBundle:AbstractPage:, id: 0 }
+#	requirements:
+#		id:   \d+
+#		controller:	[A-Z][a-Z]+
