@@ -22,11 +22,11 @@ security:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
-        login:
+        #login:
             #pattern:  ^/demo/secured/login$
             #security: false
 
-        secured_area:
+        #secured_area:
             #pattern:    ^/demo/secured/
             #form_login:
             #    check_path: _security_check
