@@ -11,4 +11,4 @@ how to download, install and start using Symfony-WCF.
 Additional Bundles:
 -------------------
 
-PzS/WCFCoreBundle/
+PzSWCFCoreBundle
