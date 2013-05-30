@@ -1,0 +1,3 @@
+pz_swcf_core_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: PzSWCFCoreBundle:Default:index }

@@ -1,0 +1,7 @@
+parameters:
+#    pz_swcf_core.example.class: PzS\WCFCoreBundle\Example
+
+services:
+#    pz_swcf_core.example:
+#        class: %pz_swcf_core.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
