@@ -1,0 +1,10 @@
+﻿# Project specific
+/web/bundles/
+/app/bootstrap*
+/app/cache/*
+/app/logs/*
+/vendor/
+/app/config/parameters.yml
+# Exclude Demo Bundle
+/src/Acme/DemoBundle/
+/src/Acme/DemoBundle/*
