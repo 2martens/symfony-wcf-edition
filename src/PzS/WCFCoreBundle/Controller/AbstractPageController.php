@@ -25,7 +25,10 @@
 
 namespace PzS\WCFCoreBundle\Controller;
 
+use PzS\WCFCoreBundle\Exception\InvalidTypeException;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * An abstract page controller to be used for any kind of pages.
@@ -39,35 +42,161 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
  * @subpackage	PzSWCFCoreBundle
  */
-abstract class AbstractPageController extends Controller
+abstract class AbstractPageController extends Controller implements IPageController
 {
-	/**
-	 * Reads parameters.
-	 */
-	public abstract function readParameters();
 	
 	/**
-	 * Reads necessary database data.
+	 * Template name.
+	 * The logical template name consisting of Bundle:Controller:templateName.
+	 * @var string
 	 */
-	public abstract function readData();
+	protected $templateName = '';
 	
 	/**
-	 * Assigns template variables.
+	 * Determines if a template is to be used.
+	 * It is true by default.
+	 * @var boolean
 	 */
-	public abstract function assignVariables();
+	protected $useTemplate = true;
+	
+	/**
+	 * Assigned template variables.
+	 * Will be filled by method call.
+	 * @var mixed[]
+	 */
+	private $templateVariables = array();
 	
 	/**
 	 * Controller action. 
 	 * Simply add a routing info to your bundle's config that
-	 * uses your controller's showAction method. That should
-	 * extend this method in order to make use of the functionality
-	 * provided by this class.
+	 * uses your controller's showAction method. 
+	 * If you don't want to use a template, set the variable accordingly and
+	 * extend the method createResponse and return your response object.
+	 * 
+	 * @return	\Symfony\Component\HttpFoundation\Response
 	 */
-	public function showAction()
+	public final function showAction()
 	{
 		$this->readParameters();
 		$this->readData();
 		$this->assignVariables();
+		
+		if ($this->useTemplate)
+		{
+			return $this->render(
+				$this->templateName, // the view
+				$this->templateVariables // the assigned template variables
+			);
+		}
+		else
+		{
+			$response = $this->createResponse();
+			if (!($response instanceof Response))
+			{
+				throw new InvalidTypeException('createResponse must return an object of type Response if no template is used. Actually no template is used.');
+			}
+			return $response;
+		}
 	}
 	
+	/**
+	 * Creates a Response object.
+	 * Unless you don't want to use a template, just make basic implementation of this method
+	 * return null.
+	 * 
+	 * @return	\Symfony\Component\HttpFoundation\Response|NULL	NULL if and only if a template is used
+	 */
+	protected abstract function createResponse();
+	
+	// template methods following
+	
+	/**
+	 * Assigns the given variable with the given content.
+	 * 
+	 * @param	string	$varName
+	 * @param	string	$varContent
+	 */
+	protected final function assignSingle($varName, $varContent)
+	{
+		$varName = trim($varName);
+		$this->templateVariables[$varName] = $varContent;
+	}
+	
+	/**
+	 * Assigns multiple variables.
+	 * 
+	 * @param	mixed[]	$variables	array of form (string) $varName => (mixed) $varContent
+	 */
+	protected final function assignMultiple(array $variables)
+	{
+		foreach ($variables as $varName => $varContent)
+		{
+			$varName = trim($varName);
+			$this->assignSingle($varName, $varContent);
+		}
+	}
+	
+	/**
+	 * Appends the content to an already assigned variable.
+	 * 
+	 * @param	string	$varName	has to be an assigned var
+	 * @param	string	$varContent	only string variables may be appended
+	 */
+	protected final function appendSingle($varName, $varContent)
+	{
+		$varName = trim($varName);
+		if (!$this->isAssigned($varName))
+		{
+			throw new \InvalidArgumentException('The varName doesn\'t belong to an assigned variable.');
+		}
+		if (!is_string($this->templateVariables[$varName]))
+		{
+			throw new \InvalidArgumentException('Only string values may be appended.');
+		}
+		$this->templateVariables[$varName] .= $varContent;
+	}
+	
+	/**
+	 * Appends content to multiple variables.
+	 * 
+	 * @param	string[]	$variables	array of form (string) $varName => (string) $varContent
+	 */
+	protected final function appendMultiple(array $variables)
+	{
+		foreach ($variables as $varName => $varContent)
+		{
+			$varName = trim($varName);
+			$this->appendSingle($varName, $varContent);
+		}
+	}
+	
+	/**
+	 * Returns if a variable with the given name has been assigned.
+	 * 
+	 * @param	string	$varName
+	 * 
+	 * @return	boolean
+	 */
+	protected final function isAssigned($varName)
+	{
+		$varName = trim($varName);
+		return isset($this->templateVariables[$varName]);
+	}
+	
+	/**
+	 * Returns an assigned var.
+	 * 
+	 * @param	string	$varName	has to be an assigned var
+	 * 
+	 * @return	mixed	the content belonging to the given varName
+	 */
+	protected final function getAssignedVar($varName)
+	{
+		$varName = trim($varName);
+		if (!$this->isAssigned($varName))
+		{
+			throw new \InvalidArgumentException('The varName doesn\'t belong to an assigned variable.');
+		}
+		return $this->templateVariables[$varName];
+	}
 }
