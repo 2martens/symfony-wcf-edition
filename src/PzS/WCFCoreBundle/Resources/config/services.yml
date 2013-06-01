@@ -1,7 +1,12 @@
 parameters:
-#    pz_swcf_core.example.class: PzS\WCFCoreBundle\Example
-
+    pzs.twig.wcf_extension.class: PzS\WCFCoreBundle\Twig\WCFCoreExtension
+    language_manager.class: PzS\WCFCoreBundle\Service\Language\LanguageManager
+    
 services:
-#    pz_swcf_core.example:
-#        class: %pz_swcf_core.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    pzs.twig.wcf_extension:
+        class: %pzs.twig.wcf_extension.class%
+        arguments: ["@language_manager"]
+        tags:
+            - { name: twig.extension }
+    language_manager:
+        class: "%language_manager.class%"
