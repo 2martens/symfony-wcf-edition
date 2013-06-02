@@ -70,7 +70,7 @@ class LanguageCategory
     /**
      * Get language category id.
      *
-     * @return integer 
+     * @return	integer 
      */
     public function getLanguageCategoryID()
     {
@@ -80,8 +80,8 @@ class LanguageCategory
     /**
      * Set languageCategory.
      *
-     * @param string $languageCategory
-     * @return LanguageCategory
+     * @param	string	$languageCategory
+     * @return	LanguageCategory
      */
     public function setLanguageCategory($languageCategory)
     {
@@ -93,7 +93,7 @@ class LanguageCategory
     /**
      * Get languageCategory.
      *
-     * @return string 
+     * @return	string 
      */
     public function getLanguageCategory()
     {
@@ -116,7 +116,7 @@ class LanguageCategory
     /**
      * Remove languageItem.
      *
-     * @param \PzS\WCFCoreBundle\Entity\LanguageItem $languageItem
+     * @param	\PzS\WCFCoreBundle\Entity\LanguageItem $languageItem
      */
     public function removeLanguageItem(\PzS\WCFCoreBundle\Entity\LanguageItem $languageItem)
     {
@@ -126,7 +126,7 @@ class LanguageCategory
     /**
      * Get languageItems.
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return	\Doctrine\Common\Collections\Collection 
      */
     public function getLanguageItems()
     {

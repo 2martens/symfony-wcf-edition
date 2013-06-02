@@ -98,7 +98,7 @@ class Language
 	/**
 	 * Get language id.
 	 *
-	 * @return integer
+	 * @return	integer
 	 */
 	public function getLanguageID()
 	{
@@ -108,8 +108,8 @@ class Language
 	/**
 	 * Set languageCode.
 	 *
-	 * @param string $languageCode
-	 * @return Language
+	 * @param	string	$languageCode
+	 * @return	Language
 	 */
 	public function setLanguageCode($languageCode)
 	{
@@ -121,7 +121,7 @@ class Language
 	/**
 	 * Get languageCode.
 	 *
-	 * @return string
+	 * @return	string
 	 */
 	public function getLanguageCode()
 	{
@@ -144,7 +144,7 @@ class Language
 	/**
 	 * Get languageName.
 	 *
-	 * @return string
+	 * @return	string
 	 */
 	public function getLanguageName()
 	{
@@ -154,8 +154,8 @@ class Language
 	/**
 	 * Set countryCode.
 	 *
-	 * @param string $countryCode
-	 * @return Language
+	 * @param	string	$countryCode
+	 * @return	Language
 	 */
 	public function setCountryCode($countryCode)
 	{
@@ -167,7 +167,7 @@ class Language
 	/**
 	 * Get countryCode.
 	 *
-	 * @return string
+	 * @return	string
 	 */
 	public function getCountryCode()
 	{
@@ -177,8 +177,8 @@ class Language
 	/**
 	 * Set isDefault.
 	 *
-	 * @param boolean $isDefault
-	 * @return Language
+	 * @param	boolean	$isDefault
+	 * @return	Language
 	 */
 	public function setIsDefault($isDefault)
 	{
@@ -190,7 +190,7 @@ class Language
 	/**
 	 * Get isDefault.
 	 *
-	 * @return boolean
+	 * @return	boolean
 	 */
 	public function getIsDefault()
 	{
@@ -200,8 +200,8 @@ class Language
 	/**
 	 * Set hasContent.
 	 *
-	 * @param boolean $hasContent
-	 * @return Language
+	 * @param	boolean	$hasContent
+	 * @return	Language
 	 */
 	public function setHasContent($hasContent)
 	{
@@ -213,7 +213,7 @@ class Language
 	/**
 	 * Get hasContent.
 	 *
-	 * @return boolean
+	 * @return	boolean
 	 */
 	public function getHasContent()
 	{
@@ -246,7 +246,7 @@ class Language
     /**
      * Get languageItems.
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return	\Doctrine\Common\Collections\Collection 
      */
     public function getLanguageItems()
     {

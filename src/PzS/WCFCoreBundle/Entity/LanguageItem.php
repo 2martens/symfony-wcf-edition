@@ -112,7 +112,7 @@ class LanguageItem
     /**
      * Get language item id.
      *
-     * @return integer 
+     * @return	integer 
      */
     public function getLanguageItemID()
     {
@@ -122,8 +122,8 @@ class LanguageItem
     /**
      * Set languageID.
      *
-     * @param integer $languageID
-     * @return LanguageItem
+     * @param	integer	$languageID
+     * @return	LanguageItem
      */
     public function setLanguageID($languageID)
     {
@@ -135,7 +135,7 @@ class LanguageItem
     /**
      * Get languageID.
      *
-     * @return integer 
+     * @return	integer 
      */
     public function getLanguageID()
     {
@@ -145,8 +145,8 @@ class LanguageItem
     /**
      * Set languageItem.
      *
-     * @param string $languageItem
-     * @return LanguageItem
+     * @param	string	$languageItem
+     * @return	LanguageItem
      */
     public function setLanguageItem($languageItem)
     {
@@ -158,7 +158,7 @@ class LanguageItem
     /**
      * Get languageItem.
      *
-     * @return string 
+     * @return	string 
      */
     public function getLanguageItem()
     {
@@ -168,8 +168,8 @@ class LanguageItem
     /**
      * Set languageItemValue.
      *
-     * @param string $languageItemValue
-     * @return LanguageItem
+     * @param	string	$languageItemValue
+     * @return	LanguageItem
      */
     public function setLanguageItemValue($languageItemValue)
     {
@@ -181,7 +181,7 @@ class LanguageItem
     /**
      * Get languageItemValue.
      *
-     * @return string 
+     * @return	string 
      */
     public function getLanguageItemValue()
     {
@@ -191,8 +191,8 @@ class LanguageItem
     /**
      * Set languageCustomItemValue.
      *
-     * @param string $languageCustomItemValue
-     * @return LanguageItem
+     * @param	string	$languageCustomItemValue
+     * @return	LanguageItem
      */
     public function setLanguageCustomItemValue($languageCustomItemValue)
     {
@@ -204,7 +204,7 @@ class LanguageItem
     /**
      * Get languageCustomItemValue.
      *
-     * @return string 
+     * @return	string 
      */
     public function getLanguageCustomItemValue()
     {
@@ -214,8 +214,8 @@ class LanguageItem
     /**
      * Set languageItemOriginIsSystem.
      *
-     * @param boolean $languageItemOriginIsSystem
-     * @return LanguageItem
+     * @param	boolean	$languageItemOriginIsSystem
+     * @return	LanguageItem
      */
     public function setLanguageItemOriginIsSystem($languageItemOriginIsSystem)
     {
@@ -227,7 +227,7 @@ class LanguageItem
     /**
      * Get languageItemOriginIsSystem.
      *
-     * @return boolean 
+     * @return	boolean 
      */
     public function getLanguageItemOriginIsSystem()
     {
@@ -237,8 +237,8 @@ class LanguageItem
     /**
      * Set languageCategoryID.
      *
-     * @param integer $languageCategoryID
-     * @return LanguageItem
+     * @param	integer	$languageCategoryID
+     * @return	LanguageItem
      */
     public function setLanguageCategoryID($languageCategoryID)
     {
@@ -250,7 +250,7 @@ class LanguageItem
     /**
      * Get languageCategoryID.
      *
-     * @return integer 
+     * @return	integer 
      */
     public function getLanguageCategoryID()
     {
@@ -260,8 +260,8 @@ class LanguageItem
     /**
      * Set packageID.
      *
-     * @param integer $packageID
-     * @return LanguageItem
+     * @param	integer	$packageID
+     * @return	LanguageItem
      */
     public function setPackageID($packageID)
     {
@@ -273,7 +273,7 @@ class LanguageItem
     /**
      * Get packageID.
      *
-     * @return integer 
+     * @return	integer 
      */
     public function getPackageID()
     {
@@ -296,7 +296,7 @@ class LanguageItem
     /**
      * Get language.
      *
-     * @return \PzS\WCFCoreBundle\Entity\Language 
+     * @return	\PzS\WCFCoreBundle\Entity\Language 
      */
     public function getLanguage()
     {
@@ -319,7 +319,7 @@ class LanguageItem
     /**
      * Get languageCategory
      *
-     * @return \PzS\WCFCoreBundle\Entity\LanguageCategory 
+     * @return	\PzS\WCFCoreBundle\Entity\LanguageCategory 
      */
     public function getLanguageCategory()
     {
