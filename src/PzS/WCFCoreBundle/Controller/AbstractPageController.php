@@ -17,11 +17,11 @@
  * along with the Symfony-WCF.  If not, see {@link http://www.gnu.org/licenses/}.
  * 
  * @author		Jim Martens
- * @copyright	2011-2012 Jim Martens
+ * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
  * @subpackage	PzSWCFCoreBundle
-*/
+ */
 
 namespace PzS\WCFCoreBundle\Controller;
 
@@ -29,10 +29,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * An abstract page controller to be used for any kind of pages.
- * 
+ *
  * Usage:
  * If your controller just shows already existing data, then inherit from this class.
- * 
+ *
  * @author		Jim Martens
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
@@ -45,29 +45,29 @@ abstract class AbstractPageController extends Controller
 	 * Reads parameters.
 	 */
 	public abstract function readParameters();
-	
+
 	/**
 	 * Reads necessary database data.
-	 */
+	*/
 	public abstract function readData();
-	
+
 	/**
 	 * Assigns template variables.
-	 */
+	*/
 	public abstract function assignVariables();
-	
+
 	/**
-	 * Controller action. 
+	 * Controller action.
 	 * Simply add a routing info to your bundle's config that
 	 * uses your controller's showAction method. That should
 	 * extend this method in order to make use of the functionality
 	 * provided by this class.
-	 */
+	*/
 	public function showAction()
 	{
 		$this->readParameters();
 		$this->readData();
 		$this->assignVariables();
 	}
-	
+
 }
