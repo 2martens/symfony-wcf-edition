@@ -36,7 +36,7 @@ use Symfony\Component\Templating\EngineInterface;
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
  * @subpackage	PzSWCFCoreBundle
  */
-class LanguageManager implements LanguageServiceInterface
+class LanguageService implements LanguageServiceInterface
 {
 	// TODO: Implement remaining methods.
 }

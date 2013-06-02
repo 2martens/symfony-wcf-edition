@@ -86,18 +86,7 @@ class WCFCoreExtension extends \Twig_Extension
 	public function langFunction($langVar)
 	{
 		$langVar = trim($langVar);
-		$parsedLangVar = $langVar;
-		
-		$languageItems = $this->languageService->getUserLanguage()->getLanguageItems();
-		foreach ($languageItems as $languageItem)
-		{
-			/*@var $languageItem \PzS\WCFCoreBundle\Entity\LanguageItem */
-			if ($languageItem->getLanguageItem() != $langVar)
-			{
-				continue;
-			}
-			$parsedLangVar = $languageItem->getLanguageItemValue();
-		}
+		$parsedLangVar = $this->languageService->getLanguageItem($langVar);
 		return $parsedLangVar;
 	}
 
