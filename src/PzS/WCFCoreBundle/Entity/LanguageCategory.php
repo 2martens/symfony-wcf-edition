@@ -32,7 +32,7 @@ use Doctrine\ORM\Mapping as ORM;
  * LanguageCategory
  *
  * @ORM\Table(name="wcf1_language_category")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="PzS\WCFCoreBundle\Repository\LanguageCategoryRepository")
  */
 class LanguageCategory
 {

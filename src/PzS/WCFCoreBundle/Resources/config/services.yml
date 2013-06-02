@@ -1,12 +1,32 @@
 parameters:
     pzs.twig.wcf_extension.class: PzS\WCFCoreBundle\Twig\WCFCoreExtension
-    language_manager.class: PzS\WCFCoreBundle\Service\Language\LanguageManager
+    language_service.class: PzS\WCFCoreBundle\Service\Language\LanguageService
+    language_repository.class: PzS\WCFCoreBundle\Repository\LanguageRepository
+    language_repository.factory_argument: "PzSWCFCoreBundle:Language"
+    language_category_repository.class: PzS\WCFCoreBundle\Repository\LanguageCategoryRepository
+    language_category_repository.factory_argument: "PzSWCFCoreBundle:LanguageCategory"
     
 services:
     pzs.twig.wcf_extension:
-        class: %pzs.twig.wcf_extension.class%
-        arguments: ["@language_manager"]
+        class: "%pzs.twig.wcf_extension.class%"
+        arguments: 
+            - "@language_service"
         tags:
             - { name: twig.extension }
-    language_manager:
-        class: "%language_manager.class%"
+    language_service:
+        class: "%language_service.class%"
+        arguments: 
+            - "@language_repository"
+            - "@language_category_repository"
+    language_repository:
+        class: "%language_repository.class%"
+        factory_service: doctrine.orm.entity_manager
+        factory_method: "getRepository"
+        arguments
+            - "@language_repository.factory_argument"
+    language_category_repository:
+        class: "%language_category_repository.class%"
+        factory_service: doctrine.orm.entity_manager
+        factory_method: "getRepository"
+        arguments
+            - "@language_category_repository.factory_argument"
