@@ -47,6 +47,16 @@ interface LanguageServiceInterface
 	public function getLanguage($languageID);
 	
 	/**
+	 * Returns the language item value of the language item with the given identifier in the current user language
+	 * or the given identifier if no such value is found.
+	 * 
+	 * @param	string	$languageItem
+	 * 
+	 * @return	string
+	 */
+	public function getLanguageItem($languageItem);
+	
+	/**
 	 * Returns current user language.
 	 * 
 	 * @return	\PzS\WCFCoreBundle\Entity\Language
