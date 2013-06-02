@@ -137,4 +137,17 @@ interface LanguageServiceInterface
 	 * @param	integer	$languageID
 	 */
 	public function setDefaultLanguage($languageID);
+	
+	/**
+	 * Returns the fixed language code of a given language.
+	 * If no language is given ($language === null), the current user language is used.
+	 * 
+	 * The fixed language code is created by removing additional language identifier from the language code.
+	 * For example 'de-informal' becomes 'de'.
+	 * 
+	 * @param	\PzS\WCFCoreBundle\Entity\Language	$language
+	 * 
+	 * @return	string
+	 */
+	public function getFixedLanguageCode(Language $language = null);
 }

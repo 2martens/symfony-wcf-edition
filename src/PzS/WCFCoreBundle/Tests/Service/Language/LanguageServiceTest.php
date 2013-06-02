@@ -216,7 +216,26 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 		parent::assertTrue($containsAllCategories, 'The result array contains either not all or more categories than actually exist.');
 	}
 	
+	/**
+	 * Tests the fixLanguageCode method.
+	 */
+	public function testGetFixedLanguageCode()
+	{
+		$language = $this->getMock('\PzS\WCFCoreBundle\Entity\Language');
+		$language->expects(parent::once())
+			->method('getLanguageCode')
+			->will(parent::returnValue('de-informal'));
+		parent::assertEquals('de', $this->languageService->getFixedLanguageCode($language), 'The returned language code doesn\'t fit the expected one.');
+		
+		$language = $this->getMock('\PzS\WCFCoreBundle\Entity\Language');
+		$language->expects(parent::once())
+			->method('getLanguageCode')
+			->will(parent::returnValue('en'));
+		parent::assertEquals('en', $this->languageService->getFixedLanguageCode($language), 'The returned language code doesn\'t fit the expected one.');
+	}
+	
 	// TODO: implement tests for getUserLanguage, getLanguageItem and isMultilingualismEnabled
+	// TODO: extend getFixedLanguageCode test with parameterless case
 	
 	// ----- helper functions ----//
 	
