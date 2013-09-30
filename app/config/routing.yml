@@ -1,0 +1,4 @@
+pz_swcf_core:
+    resource: "@PzSWCFCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
