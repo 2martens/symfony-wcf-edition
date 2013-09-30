@@ -108,7 +108,7 @@ class LanguageCategory
      */
     public function addLanguageItem(\PzS\WCFCoreBundle\Entity\LanguageItem $languageItem)
     {
-        $this->languageItems[] = $languageItems;
+        $this->languageItems[] = $languageItem;
     
         return $this;
     }
@@ -120,7 +120,7 @@ class LanguageCategory
      */
     public function removeLanguageItem(\PzS\WCFCoreBundle\Entity\LanguageItem $languageItem)
     {
-        $this->languageItems->removeElement($languageItems);
+        $this->languageItems->removeElement($languageItem);
     }
 	
     /**

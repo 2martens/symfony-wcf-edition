@@ -228,7 +228,7 @@ class Language
      */
     public function addLanguageItem(\PzS\WCFCoreBundle\Entity\LanguageItem $languageItem)
     {
-        $this->languageItems[] = $languageItems;
+        $this->languageItems[] = $languageItem;
     
         return $this;
     }
