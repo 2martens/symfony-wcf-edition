@@ -18,4 +18,4 @@ app/config/parameters.yml
 
 #exclude composer
 composer.phar
-composer.lock
+installer
