@@ -46,7 +46,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 	private $languageService;
 	
 	/**
-	 * {@inheritDoc}
+	 * 
 	 */
 	public function setUp()
 	{
