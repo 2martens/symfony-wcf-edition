@@ -36,5 +36,44 @@ namespace Pzs\WCFCoreBundle\Service\Cache;
  */
 class CacheService implements CacheServiceInterface
 {
-	// @todo implement remaining methods
+	// TODO implement methods
+	/**
+	 * 
+	 */
+	public function get($cacheName, array $parameters = array())
+	{
+		return '';
+	}
+	
+	/**
+	 * 
+	 */
+	public function set($cacheName, array $data, array $parameters = array())
+	{
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public function reset($cacheName, array $parameters = array())
+	{
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public function resetAll()
+	{
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public function isCacheExisting($cacheName)
+	{
+		return false;
+	}
 }

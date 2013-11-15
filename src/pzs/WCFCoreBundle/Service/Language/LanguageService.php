@@ -26,6 +26,8 @@
 namespace Pzs\WCFCoreBundle\Service\Language;
 
 use Symfony\Component\Templating\EngineInterface;
+use Pzs\WCFCoreBundle\Entity\Language;
+use Pzs\WCFCoreBundle\Repository\LanguageRepository;
 
 /**
  * Manages the languages.
@@ -38,5 +40,119 @@ use Symfony\Component\Templating\EngineInterface;
  */
 class LanguageService implements LanguageServiceInterface
 {
-	// TODO: Implement remaining methods.
+	// TODO: Implement methods.
+	
+	/**
+	 * Constructor.
+	 * 
+	 * @param \Pzs\WCFCoreBundle\Repository\LanguageRepository $repository
+	 */
+	public function __construct(LanguageRepository $repository)
+	{
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public function getLanguage($languageID)
+	{
+		return null;
+	}
+	
+	/**
+	 * 
+	 */
+	public function getLanguageItem($languageItem)
+	{
+		return null;
+	}
+	
+	/**
+	 * 
+	 */
+	public function getUserLanguage()
+	{
+		return null;
+	}
+	
+	/**
+	 * 
+	 */
+	public function getLanguageByCode($languageCode)
+	{
+		return null;
+	}
+	
+	/**
+	 * 
+	 */
+	public function isValidCategory($categoryName)
+	{
+		return false;
+	}
+	
+	/**
+	 * 
+	 */
+	public function getCategory($categoryName)
+	{
+		return null;
+	}
+	
+	/**
+	 * 
+	 */
+	public function getCategoryByID($categoryID)
+	{
+		return null;
+	}
+	
+	/**
+	 * 
+	 */
+	public function getCategories()
+	{
+		return array();
+	}
+	
+	/**
+	 * 
+	 */
+	public function getDefaultLanguageID()
+	{
+		return 0;
+	}
+	
+	/**
+	 * 
+	 */
+	public function getLanguages()
+	{
+		return array();
+	}
+	
+	/**
+	 * 
+	 */
+	public function isMultilingualismEnabled()
+	{
+		return false;
+	}
+	
+	/**
+	 * 
+	 */
+	public function setDefaultLanguage($languageID)
+	{
+		
+	}
+	
+	/**
+	 * 
+	 */
+	public function getFixedLanguageCode(Language $language = null)
+	{
+		return '';
+	}
 }
