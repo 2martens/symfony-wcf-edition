@@ -17,16 +17,16 @@
  * along with the Symfony-WCF.  If not, see {@link http://www.gnu.org/licenses/}.
  * 
  * @author		Jim Martens
- * @copyright	2011-2012 Jim Martens
+ * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
  * @subpackage	PzsWCFCoreBundle
-*/
+ */
 
-namespace Pzs\WCFCoreBundle\Exception;
+namespace Pzs\WCFCoreBundle\Cache\Source;
 
 /**
- * This exception is thrown if an invalid type is encountered.
+ * Defines functionality of a cache source.
  * 
  * @author		Jim Martens
  * @copyright	2013 Jim Martens
@@ -34,6 +34,37 @@ namespace Pzs\WCFCoreBundle\Exception;
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
  * @subpackage	PzsWCFCoreBundle
  */
-class InvalidTypeException extends \RuntimeException
-{	
+interface ICacheSource
+{
+	/**
+	 * Flushes a specific cache, optionally removing caches which share the same name.
+	 *
+	 * @param	string		$cacheName
+	 * @param	boolean		$useWildcard	can be used if you have a common cache name with different parameters each
+	 */
+	public function flush($cacheName, $useWildcard);
+	
+	/**
+	 * Clears the cache completely.
+	 */
+	public function flushAll();
+	
+	/**
+	 * Returns a cached variable.
+	 *
+	 * @param	string	$cacheName
+	 * @param	integer	$maxLifetime
+	 * 
+	 * @return	mixed
+	 */
+	public function get($cacheName, $maxLifetime);
+	
+	/**
+	 * Stores a variable in the cache.
+	 *
+	 * @param	string	$cacheName
+	 * @param	mixed	$value
+	 * @param	integer	$maxLifetime
+	*/
+	public function set($cacheName, $value, $maxLifetime);
 }

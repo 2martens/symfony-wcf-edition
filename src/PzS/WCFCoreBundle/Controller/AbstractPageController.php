@@ -20,12 +20,12 @@
  * @copyright	2011-2012 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
 */
 
-namespace PzS\WCFCoreBundle\Controller;
+namespace Pzs\WCFCoreBundle\Controller;
 
-use PzS\WCFCoreBundle\Exception\InvalidTypeException;
+use Pzs\WCFCoreBundle\Exception\InvalidTypeException;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -40,7 +40,7 @@ use Symfony\Component\HttpFoundation\Response;
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 abstract class AbstractPageController extends Controller implements IPageController
 {

@@ -20,12 +20,12 @@
  * @copyright	2011-2012 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 
-namespace PzS\WCFCoreBundle\Twig;
+namespace Pzs\WCFCoreBundle\Twig;
 
-use PzS\WCFCoreBundle\Service\Language\LanguageServiceInterface;
+use Pzs\WCFCoreBundle\Service\Language\LanguageServiceInterface;
 
 /**
  * Extends Twig with the WCF template functionality.
@@ -34,14 +34,14 @@ use PzS\WCFCoreBundle\Service\Language\LanguageServiceInterface;
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 class WCFCoreExtension extends \Twig_Extension
 {
 	/**
 	 * The language service.
 	 * 
-	 * @var \PzS\WCFCoreBundle\Service\Language\LanguageServiceInterface
+	 * @var \Pzs\WCFCoreBundle\Service\Language\LanguageServiceInterface
 	 */
 	private $languageService;
 	

@@ -20,10 +20,10 @@
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 
-namespace PzS\WCFCoreBundle\Entity;
+namespace Pzs\WCFCoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -94,7 +94,7 @@ class LanguageItem
     private $packageID;
     
     /**
-     * @var PzS\WCFCoreBundle\Entity\Language
+     * @var Pzs\WCFCoreBundle\Entity\Language
      * 
      * @ORM\ManyToOne(targetEntity="Language", inversedBy="languageItems")
      * @ORM\JoinColumn(name="languageID", referencedColumnName="languageID")
@@ -102,7 +102,7 @@ class LanguageItem
     private $language;
 	
     /**
-     * @var PzS\WCFCoreBundle\Entity\LanguageCategory
+     * @var Pzs\WCFCoreBundle\Entity\LanguageCategory
      * 
      * @ORM\ManyToOne(targetEntity="LanguageCategory", inversedBy="languageItems")
      * @ORM\JoinColumn(name="languageCategoryID", referencedColumnName="languageCategoryID")
@@ -283,10 +283,10 @@ class LanguageItem
     /**
      * Set language.
      *
-     * @param	\PzS\WCFCoreBundle\Entity\Language $language
+     * @param	\Pzs\WCFCoreBundle\Entity\Language $language
      * @return	LanguageItem
      */
-    public function setLanguage(\PzS\WCFCoreBundle\Entity\Language $language = null)
+    public function setLanguage(\Pzs\WCFCoreBundle\Entity\Language $language = null)
     {
         $this->language = $language;
     
@@ -296,7 +296,7 @@ class LanguageItem
     /**
      * Get language.
      *
-     * @return	\PzS\WCFCoreBundle\Entity\Language 
+     * @return	\Pzs\WCFCoreBundle\Entity\Language 
      */
     public function getLanguage()
     {
@@ -306,10 +306,10 @@ class LanguageItem
     /**
      * Set languageCategory
      *
-     * @param	\PzS\WCFCoreBundle\Entity\LanguageCategory $languageCategory
+     * @param	\Pzs\WCFCoreBundle\Entity\LanguageCategory $languageCategory
      * @return	LanguageItem
      */
-    public function setLanguageCategory(\PzS\WCFCoreBundle\Entity\LanguageCategory $languageCategory = null)
+    public function setLanguageCategory(\Pzs\WCFCoreBundle\Entity\LanguageCategory $languageCategory = null)
     {
         $this->languageCategory = $languageCategory;
     
@@ -319,7 +319,7 @@ class LanguageItem
     /**
      * Get languageCategory
      *
-     * @return	\PzS\WCFCoreBundle\Entity\LanguageCategory 
+     * @return	\Pzs\WCFCoreBundle\Entity\LanguageCategory 
      */
     public function getLanguageCategory()
     {

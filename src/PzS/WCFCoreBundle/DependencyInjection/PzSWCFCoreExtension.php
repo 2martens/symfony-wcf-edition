@@ -1,6 +1,6 @@
 <?php
 
-namespace PzS\WCFCoreBundle\DependencyInjection;
+namespace Pzs\WCFCoreBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class PzSWCFCoreExtension extends Extension
+class PzsWCFCoreExtension extends Extension
 {
     /**
      * {@inheritDoc}

@@ -20,10 +20,10 @@
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 
-namespace PzS\WCFCoreBundle\Service\Language;
+namespace Pzs\WCFCoreBundle\Service\Language;
 
 use Symfony\Component\Templating\EngineInterface;
 
@@ -34,7 +34,7 @@ use Symfony\Component\Templating\EngineInterface;
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 class LanguageService implements LanguageServiceInterface
 {

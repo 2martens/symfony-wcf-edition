@@ -20,10 +20,10 @@
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 
-namespace PzS\WCFCoreBundle\Service\Language;
+namespace Pzs\WCFCoreBundle\Service\Language;
 
 /**
  * Provides functionality for internationalization.
@@ -32,7 +32,7 @@ namespace PzS\WCFCoreBundle\Service\Language;
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 interface LanguageServiceInterface
 {
@@ -42,7 +42,7 @@ interface LanguageServiceInterface
 	 * 
 	 * @param	integer	$languageID
 	 * 
-	 * @return	\PzS\WCFCoreBundle\Entity\Language|NULL
+	 * @return	\Pzs\WCFCoreBundle\Entity\Language|NULL
 	 */
 	public function getLanguage($languageID);
 	
@@ -59,7 +59,7 @@ interface LanguageServiceInterface
 	/**
 	 * Returns current user language.
 	 * 
-	 * @return	\PzS\WCFCoreBundle\Entity\Language
+	 * @return	\Pzs\WCFCoreBundle\Entity\Language
 	 */
 	public function getUserLanguage();
 	
@@ -69,7 +69,7 @@ interface LanguageServiceInterface
 	 * 
 	 * @param	string	$languageCode
 	 * 
-	 * @return	\PzS\WCFCoreBundle\Entity\Language|NULL
+	 * @return	\Pzs\WCFCoreBundle\Entity\Language|NULL
 	 */
 	public function getLanguageByCode($languageCode);
 	
@@ -89,7 +89,7 @@ interface LanguageServiceInterface
 	 * 
 	 * @param	string	$categoryName
 	 * 
-	 * @return	\PzS\WCFCoreBundle\Entity\LanguageCategory|NULL
+	 * @return	\Pzs\WCFCoreBundle\Entity\LanguageCategory|NULL
 	 */
 	public function getCategory($categoryName);
 	
@@ -99,14 +99,14 @@ interface LanguageServiceInterface
 	 * 
 	 * @param	integer	$categoryID
 	 * 
-	 * @return	\PzS\WCFCoreBundle\Entity\LanguageCategory|NULL
+	 * @return	\Pzs\WCFCoreBundle\Entity\LanguageCategory|NULL
 	 */
 	public function getCategoryByID($categoryID);
 	
 	/**
 	 * Returns a list of all available language categories.
 	 * 
-	 * @return	\PzS\WCFCoreBundle\Entity\LanguageCategory[]
+	 * @return	\Pzs\WCFCoreBundle\Entity\LanguageCategory[]
 	 */
 	public function getCategories();
 	
@@ -120,7 +120,7 @@ interface LanguageServiceInterface
 	/**
 	 * Returns a list of all available languages.
 	 * 
-	 * @return	\PzS\WCFCoreBundle\Entity\Language[]
+	 * @return	\Pzs\WCFCoreBundle\Entity\Language[]
 	 */
 	public function getLanguages();
 	
@@ -145,7 +145,7 @@ interface LanguageServiceInterface
 	 * The fixed language code is created by removing additional language identifier from the language code.
 	 * For example 'de-informal' becomes 'de'.
 	 * 
-	 * @param	\PzS\WCFCoreBundle\Entity\Language	$language
+	 * @param	\Pzs\WCFCoreBundle\Entity\Language	$language
 	 * 
 	 * @return	string
 	 */

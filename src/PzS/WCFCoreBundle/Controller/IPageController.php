@@ -23,7 +23,7 @@
  * @subpackage	
 */
 
-namespace PzS\WCFCoreBundle\Controller;
+namespace Pzs\WCFCoreBundle\Controller;
 
 /**
  * Declares the public interface for all page controllers.
@@ -32,7 +32,7 @@ namespace PzS\WCFCoreBundle\Controller;
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 interface IPageController
 {

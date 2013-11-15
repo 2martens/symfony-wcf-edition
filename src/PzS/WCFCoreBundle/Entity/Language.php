@@ -20,10 +20,10 @@
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 
-namespace PzS\WCFCoreBundle\Entity;
+namespace Pzs\WCFCoreBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -32,7 +32,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Language
  *
  * @ORM\Table(name="wcf1_language")
- * @ORM\Entity(repositoryClass="PzS\WCFCoreBundle\Repository\LanguageRepository")
+ * @ORM\Entity(repositoryClass="Pzs\WCFCoreBundle\Repository\LanguageRepository")
  */
 class Language
 {
@@ -223,10 +223,10 @@ class Language
     /**
      * Add languageItem.
      *
-     * @param	\PzS\WCFCoreBundle\Entity\LanguageItem $languageItem
+     * @param	\Pzs\WCFCoreBundle\Entity\LanguageItem $languageItem
      * @return	Language
      */
-    public function addLanguageItem(\PzS\WCFCoreBundle\Entity\LanguageItem $languageItem)
+    public function addLanguageItem(\Pzs\WCFCoreBundle\Entity\LanguageItem $languageItem)
     {
         $this->languageItems[] = $languageItem;
     
@@ -236,9 +236,9 @@ class Language
     /**
      * Remove languageItem.
      *
-     * @param \PzS\WCFCoreBundle\Entity\LanguageItem $languageItem
+     * @param \Pzs\WCFCoreBundle\Entity\LanguageItem $languageItem
      */
-    public function removeLanguageItem(\PzS\WCFCoreBundle\Entity\LanguageItem $languageItem)
+    public function removeLanguageItem(\Pzs\WCFCoreBundle\Entity\LanguageItem $languageItem)
     {
         $this->languageItems->removeElement($languageItem);
     }

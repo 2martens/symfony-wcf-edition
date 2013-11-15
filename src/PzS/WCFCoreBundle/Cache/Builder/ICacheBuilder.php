@@ -17,16 +17,16 @@
  * along with the Symfony-WCF.  If not, see {@link http://www.gnu.org/licenses/}.
  * 
  * @author		Jim Martens
- * @copyright	2011-2012 Jim Martens
+ * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
  * @subpackage	PzsWCFCoreBundle
-*/
+ */
 
-namespace Pzs\WCFCoreBundle\Exception;
+namespace Pzs\WCFCoreBundle\Cache\Builder;
 
 /**
- * This exception is thrown if an invalid type is encountered.
+ * Defines behaviour of cache builders.
  * 
  * @author		Jim Martens
  * @copyright	2013 Jim Martens
@@ -34,6 +34,20 @@ namespace Pzs\WCFCoreBundle\Exception;
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
  * @subpackage	PzsWCFCoreBundle
  */
-class InvalidTypeException extends \RuntimeException
-{	
+interface ICacheBuilder
+{
+	/**
+	 * Returns the data that ought to be cached.
+	 *
+	 * @param	array		$parameters
+	 * @return	array
+	 */
+	public function getData(array $parameters = array());
+	
+	/**
+	 * Returns maximum lifetime for cache resource.
+	 *
+	 * @return	integer
+	*/
+	public function getMaxLifetime();
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace PzS\WCFCoreBundle;
+namespace Pzs\WCFCoreBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class PzSWCFCoreBundle extends Bundle
+class PzsWCFCoreBundle extends Bundle
 {
 }

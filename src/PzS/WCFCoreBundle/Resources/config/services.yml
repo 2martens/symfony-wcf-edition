@@ -1,10 +1,12 @@
 parameters:
-    pzs.twig.wcf_extension.class: PzS\WCFCoreBundle\Twig\WCFCoreExtension
-    language_service.class: PzS\WCFCoreBundle\Service\Language\LanguageService
-    language_repository.class: PzS\WCFCoreBundle\Repository\LanguageRepository
-    language_repository.factory_argument: "PzSWCFCoreBundle:Language"
-    language_category_repository.class: PzS\WCFCoreBundle\Repository\LanguageCategoryRepository
-    language_category_repository.factory_argument: "PzSWCFCoreBundle:LanguageCategory"
+    pzs.twig.wcf_extension.class: Pzs\WCFCoreBundle\Twig\WCFCoreExtension
+    cache_service.class: Pzs\WCFCoreBundle\Service\Cache\CacheService
+    cache_service.source: Pzs\WCFCoreBundle\Cache\Source\DiskCacheSource
+    language_service.class: Pzs\WCFCoreBundle\Service\Language\LanguageService
+    language_repository.class: Pzs\WCFCoreBundle\Repository\LanguageRepository
+    language_repository.factory_argument: "PzsWCFCoreBundle:Language"
+    language_category_repository.class: Pzs\WCFCoreBundle\Repository\LanguageCategoryRepository
+    language_category_repository.factory_argument: "PzsWCFCoreBundle:LanguageCategory"
     
 services:
     pzs.twig.wcf_extension:
@@ -13,6 +15,11 @@ services:
             - "@language_service"
         tags:
             - { name: twig.extension }
+    cache_service:
+        class: "%cache_service.class%"
+        source: "%cache_service.source%"
+        arguments:
+            - "@cache_service.source"
     language_service:
         class: "%language_service.class%"
         arguments: 
@@ -22,11 +29,11 @@ services:
         class: "%language_repository.class%"
         factory_service: doctrine.orm.entity_manager
         factory_method: "getRepository"
-        arguments
+        arguments:
             - "@language_repository.factory_argument"
     language_category_repository:
         class: "%language_category_repository.class%"
         factory_service: doctrine.orm.entity_manager
         factory_method: "getRepository"
-        arguments
+        arguments:
             - "@language_category_repository.factory_argument"

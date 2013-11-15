@@ -17,16 +17,16 @@
  * along with the Symfony-WCF.  If not, see {@link http://www.gnu.org/licenses/}.
  * 
  * @author		Jim Martens
- * @copyright	2011-2012 Jim Martens
+ * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
  * @subpackage	PzsWCFCoreBundle
-*/
+ */
 
-namespace Pzs\WCFCoreBundle\Exception;
+namespace Pzs\WCFCoreBundle\Service\Cache;
 
 /**
- * This exception is thrown if an invalid type is encountered.
+ * Manages the cache.
  * 
  * @author		Jim Martens
  * @copyright	2013 Jim Martens
@@ -34,6 +34,7 @@ namespace Pzs\WCFCoreBundle\Exception;
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
  * @subpackage	PzsWCFCoreBundle
  */
-class InvalidTypeException extends \RuntimeException
-{	
+class CacheService implements CacheServiceInterface
+{
+	// @todo implement remaining methods
 }

@@ -20,12 +20,12 @@
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 
-namespace PzS\WCFCoreBundle\Tests\Service\Language;
+namespace Pzs\WCFCoreBundle\Tests\Service\Language;
 
-use PzS\WCFCoreBundle\Service\Language\LanguageService;
+use Pzs\WCFCoreBundle\Service\Language\LanguageService;
 
 /**
  * Tests the language service.
@@ -34,14 +34,14 @@ use PzS\WCFCoreBundle\Service\Language\LanguageService;
  * @copyright	2013 Jim Martens
  * @license		http://www.gnu.org/licenses/lgpl-3.0 GNU Lesser General Public License, version 3
  * @package		de.plugins-zum-selberbauen.SymfonyWCF
- * @subpackage	PzSWCFCoreBundle
+ * @subpackage	PzsWCFCoreBundle
  */
 class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 {
 	/**
 	 * The language service.
 	 * 
-	 * @var \PzS\WCFCoreBundle\Service\Language\LanguageServiceInterface
+	 * @var \Pzs\WCFCoreBundle\Service\Language\LanguageServiceInterface
 	 */
 	private $languageService;
 	
@@ -50,7 +50,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function setUp()
 	{
-		$languageRepository = $this->getMockBuilder('\PzS\WCFCoreBundle\Repository\LanguageRepository')
+		$languageRepository = $this->getMockBuilder('\Pzs\WCFCoreBundle\Repository\LanguageRepository')
 			->disableOriginalConstructor()
 			->getMock();
 		$languageRepository->expects(parent::once())
@@ -60,7 +60,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 			->method('findBy')
 			->will(parent::returnCallback(array($this, 'findByLanguageCallback')));
 		
-		$languageCategoryRepository = $this->getMockBuilder('\PzS\WCFCoreBundle\Repository\LanguageCategoryRepository')
+		$languageCategoryRepository = $this->getMockBuilder('\Pzs\WCFCoreBundle\Repository\LanguageCategoryRepository')
 			->disableOriginalConstructor()
 			->getMock();
 		$languageRepository->expects(parent::once())
@@ -105,7 +105,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 	{
 		$languages = $this->languageService->getLanguages();
 		parent::assertCount(2, $languages, 'The result array contains more or less entries than languages exist.');
-		parent::assertContainsOnlyInstancesOf('\PzS\WCFCoreBundle\Entity\Language', $languages, 'The result array does contain elements that are not languages.');
+		parent::assertContainsOnlyInstancesOf('\Pzs\WCFCoreBundle\Entity\Language', $languages, 'The result array does contain elements that are not languages.');
 	
 		$containsAllLanguages = false;
 		$contains1 = false;
@@ -189,7 +189,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 	{
 		$categories = $this->languageService->getCategories();
 		parent::assertCount(2, $categories, 'The result array contains more or less entries than categories exist.');
-		parent::assertContainsOnlyInstancesOf('\PzS\WCFCoreBundle\Entity\LanguageCategory', $categories, 'The result array does contain elements that are not language categories.');
+		parent::assertContainsOnlyInstancesOf('\Pzs\WCFCoreBundle\Entity\LanguageCategory', $categories, 'The result array does contain elements that are not language categories.');
 		
 		$containsAllCategories = false;
 		$contains1 = false;
@@ -221,13 +221,13 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 	 */
 	public function testGetFixedLanguageCode()
 	{
-		$language = $this->getMock('\PzS\WCFCoreBundle\Entity\Language');
+		$language = $this->getMock('\Pzs\WCFCoreBundle\Entity\Language');
 		$language->expects(parent::once())
 			->method('getLanguageCode')
 			->will(parent::returnValue('de-informal'));
 		parent::assertEquals('de', $this->languageService->getFixedLanguageCode($language), 'The returned language code doesn\'t fit the expected one.');
 		
-		$language = $this->getMock('\PzS\WCFCoreBundle\Entity\Language');
+		$language = $this->getMock('\Pzs\WCFCoreBundle\Entity\Language');
 		$language->expects(parent::once())
 			->method('getLanguageCode')
 			->will(parent::returnValue('en'));
@@ -251,7 +251,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 		$id = $args[0];
 		if ($id == 1)
 		{
-			$language = $this->getMock('\PzS\WCFCoreBundle\Entity\Language');
+			$language = $this->getMock('\Pzs\WCFCoreBundle\Entity\Language');
 			$language->expects(parent::once())
 				->method('getLanguageID')
 				->will(parent::returnValue(1));
@@ -259,7 +259,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 		}
 		elseif ($id == 2)
 		{
-			$language = $this->getMock('\PzS\WCFCoreBundle\Entity\Language');
+			$language = $this->getMock('\Pzs\WCFCoreBundle\Entity\Language');
 			$language->expects(parent::once())
 				->method('getLanguageID')
 				->will(parent::returnValue(2));
@@ -284,7 +284,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 		$languageCode = $args[0]['languageCode'];
 		if ($languageCode == 'de')
 		{
-			$language = $this->getMock('\PzS\WCFCoreBundle\Entity\Language');
+			$language = $this->getMock('\Pzs\WCFCoreBundle\Entity\Language');
 			$language->expects(parent::once())
 				->method('getLanguageCode')
 				->will(parent::returnValue('de'));
@@ -292,7 +292,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 		}
 		elseif ($languageCode == 'en')
 		{
-			$language = $this->getMock('\PzS\WCFCoreBundle\Entity\Language');
+			$language = $this->getMock('\Pzs\WCFCoreBundle\Entity\Language');
 			$language->expects(parent::once())
 				->method('getLanguageCode')
 				->will(parent::returnValue('en'));
@@ -317,7 +317,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 		$id = $args[0];
 		if ($id == 1)
 		{
-			$languageCategory = $this->getMock('\PzS\WCFCoreBundle\Entity\LanguageCategory');
+			$languageCategory = $this->getMock('\Pzs\WCFCoreBundle\Entity\LanguageCategory');
 			$languageCategory->expects(parent::once())
 				->method('getLanguageCategoryID')
 				->will(parent::returnValue(1));
@@ -325,7 +325,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 		}
 		elseif ($id == 2)
 		{
-			$languageCategory = $this->getMock('\PzS\WCFCoreBundle\Entity\LanguageCategory');
+			$languageCategory = $this->getMock('\Pzs\WCFCoreBundle\Entity\LanguageCategory');
 			$languageCategory->expects(parent::once())
 				->method('getLanguageCategoryID')
 				->will(parent::returnValue(2));
@@ -350,7 +350,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 		$languageCategory = $args[0]['languageCategory'];
 		if ($languageCategory == 'wcf.global')
 		{
-			$languageCategory = $this->getMock('\PzS\WCFCoreBundle\Entity\LanguageCategory');
+			$languageCategory = $this->getMock('\Pzs\WCFCoreBundle\Entity\LanguageCategory');
 			$languageCategory->expects(parent::once())
 				->method('getLanguageCategory')
 				->will(parent::returnValue('wcf.global'));
@@ -358,7 +358,7 @@ class LanguageServiceTest extends \PHPUnit_Framework_TestCase
 		}
 		elseif ($languageCategory == 'wcf.acp')
 		{
-			$languageCategory = $this->getMock('\PzS\WCFCoreBundle\Entity\LanguageCategory');
+			$languageCategory = $this->getMock('\Pzs\WCFCoreBundle\Entity\LanguageCategory');
 			$languageCategory->expects(parent::once())
 				->method('getLanguageCategory')
 				->will(parent::returnValue('wcf.acp'));
