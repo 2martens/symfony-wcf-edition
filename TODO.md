@@ -8,4 +8,3 @@ WCFCoreBundle:
 - implement user service
 - implement configurable constants (global variables)
 - add Font Awesome
-- 
