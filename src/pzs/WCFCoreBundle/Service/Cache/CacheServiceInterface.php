@@ -71,7 +71,7 @@ interface CacheServiceInterface
 	public function resetAll();
 	
 	/**
-	 * Returns if a cache under the given cache name exists.
+	 * Returns true if a cache under the given cache name exists.
 	 * 
 	 * @param	string	$cacheName
 	 * 
