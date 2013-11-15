@@ -24,6 +24,7 @@
  */
 
 namespace Pzs\WCFCoreBundle\Service\Language;
+use Pzs\WCFCoreBundle\Entity\Language;
 
 /**
  * Provides functionality for internationalization.
