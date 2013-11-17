@@ -1,4 +1,0 @@
-pzs_wcf_core:
-    resource: "@PzsWCFCoreBundle/Resources/config/routing.yml"
-    prefix:   /
-
